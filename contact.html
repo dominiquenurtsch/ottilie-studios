@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact @dom.overseas — Ottilie Studios</title>
+<meta name="description" content="Get in touch with Ottilie Studios and @dom.overseas. Email or send a message via the contact form." />
+<link rel="icon" href="public/images/logo.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="contact">
+<div data-include="partials/header.html"></div>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="kicker">Get in Touch</span>
+      <h1>Contact <em>@dom.overseas</em></h1>
+      <p class="lead">Send a message via the form or get in touch via e-mail. Looking forward to hearing from you.</p>
+      <span class="page-hero__date">Based in Australia · Frequent travels to Europe</span>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap contact__grid">
+      <div class="contact__info">
+        <h3>Email &amp; Socials</h3>
+        <p>For all enquiries — brand partnerships, UGC, content creation and press — please reach out directly.</p>
+        <p><a class="email" href="mailto:dominique@ottilie-studios.com.au">dominique@ottilie-studios.com.au</a></p>
+        <ul>
+          <li><a href="https://www.instagram.com/dom.overseas/" target="_blank" rel="noopener">Instagram — @dom.overseas</a></li>
+          <li><a href="https://www.tiktok.com/@dom.overseas" target="_blank" rel="noopener">TikTok — @dom.overseas</a></li>
+          <li><a href="https://www.pinterest.com.au/domoverseas/" target="_blank" rel="noopener">Pinterest — @domoverseas</a></li>
+        </ul>
+
+        <p style="margin-top:40px; font-style: italic;"><em>Upcoming content trips — May/June 2026 · Hong Kong · Italy · Mallorca · Paris</em></p>
+      </div>
+
+      <form class="form" onsubmit="event.preventDefault(); this.querySelector('.form__status').textContent='Thank you for your response ✦'; this.reset();">
+        <div>
+          <label for="cname">Name (required)</label>
+          <input id="cname" name="name" type="text" required />
+        </div>
+        <div>
+          <label for="cemail">Email (required)</label>
+          <input id="cemail" name="email" type="email" required />
+        </div>
+        <div>
+          <label for="cmsg">Message</label>
+          <textarea id="cmsg" name="message"></textarea>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <button type="submit" class="btn">Send</button>
+          <span class="form__status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div data-include="partials/footer.html"></div>
+<script src="script.js" defer></script>
+</body>
+</html>

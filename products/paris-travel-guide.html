@@ -62,12 +62,7 @@
         <p class="pinfo__lead">Your chic, stress-free Paris itinerary by luxury lifestyle content creator @dom.overseas — with the exact cafés, hotels, restaurants, shopping spots and walks I personally return to every visit. Curated from years of living in and travelling to the city.</p>
 
         <form class="buy" onsubmit="event.preventDefault(); const m=document.getElementById('buyMsg'); m.textContent='Added to basket ✦'; setTimeout(()=>m.textContent='',2500);">
-          <div class="qty" aria-label="Quantity">
-            <button type="button" aria-label="Decrease" onclick="const i=this.parentNode.querySelector('input'); i.value=Math.max(1,parseInt(i.value||1)-1);">−</button>
-            <input type="number" min="1" value="1" aria-label="Quantity" />
-            <button type="button" aria-label="Increase" onclick="const i=this.parentNode.querySelector('input'); i.value=parseInt(i.value||1)+1;">+</button>
-          </div>
-          <button type="submit" class="btn btn--ghost">Add to basket</button>
+<button type="submit" class="btn btn--ghost">Add to basket</button>
           <button type="button" class="btn" onclick="openCheckoutDrawer()">Buy Now</button>
         </form>
         <div id="buyMsg" class="mono" style="min-height:18px; color:var(--accent); font-family:var(--font-sans); font-size:11px; letter-spacing:0.22em; text-transform:uppercase;"></div>

@@ -1767,7 +1767,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 28px 0;
+  padding: 28px 32px;
   cursor: pointer;
   list-style: none;
 }

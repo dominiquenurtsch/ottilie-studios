@@ -723,7 +723,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 760px; margin-left: auto; margin-right: auto;
 }
 .cta-block h2 em { font-style: italic; }
-.cta-block p { font-family: var(--font-serif); font-style: italic; font-size: 18px; color: var(--ink-soft); max-width: 520px; margin: 0 auto 32px; }
+.cta-block p { font-family: var(--font-serif); font-style: italic; font-size: 18px; color: var(--ink-soft); max-width: 520px; margin: 0 auto 32px; text-align: center; }
 
 /* -----------------------------------------------------------
    Contact page

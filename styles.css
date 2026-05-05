@@ -1880,3 +1880,149 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 600px) {
   .cat-gallery { grid-template-columns: repeat(3, 1fr); gap: 3px; }
 }
+
+/* ---- Content Trips page ---- */
+.trips__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 56px;
+}
+.trip-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+.trip-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.trip-card__loc {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+.trip-card__date {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+.trip-card__badge {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 4px 10px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.trip-card__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+.trip-card__gallery img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.trip-card__body {
+  padding: 28px;
+}
+.trip-card__body p {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+}
+.trip-card__types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 28px;
+}
+.trip-card__types span {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--bg-cream);
+  padding: 5px 12px;
+}
+@media (max-width: 900px) {
+  .trips__grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ---- Shop page improvements ---- */
+.shop-trust {
+  background: var(--bg-cream);
+  padding: 80px 0;
+}
+.shop-trust__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.shop-trust__img img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+.shop-trust__body .kicker { margin-bottom: 16px; display: block; }
+.shop-trust__body h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 300;
+  line-height: 1.15;
+  margin: 0 0 24px;
+}
+.shop-trust__body p {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+.shop-trust__creds {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.shop-trust__creds li {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+}
+.shop-trust__creds li span {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  text-transform: uppercase;
+  min-width: 20px;
+}
+@media (max-width: 768px) {
+  .shop-trust__inner { grid-template-columns: 1fr; gap: 40px; }
+}

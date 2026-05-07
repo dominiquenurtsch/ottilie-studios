@@ -25,4 +25,34 @@
   // Footer year
   const yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
+
+  // Journal tab filtering
+  const tabs = document.getElementById('journal-tabs');
+  const cards = document.getElementById('journal-cards');
+  const searchInput = document.getElementById('journal-search');
+
+  if (tabs && cards) {
+    tabs.addEventListener('click', e => {
+      const pill = e.target.closest('[data-filter]');
+      if (!pill) return;
+      e.preventDefault();
+      tabs.querySelectorAll('.pill').forEach(p => p.classList.remove('pill--on'));
+      pill.classList.add('pill--on');
+      const filter = pill.dataset.filter;
+      cards.querySelectorAll('.card').forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.style.display = match ? '' : 'none';
+      });
+    });
+  }
+
+  if (searchInput && cards) {
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase();
+      cards.querySelectorAll('.card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  }
 })();

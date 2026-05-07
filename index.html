@@ -28,10 +28,10 @@
     <div class="hero__center-inner">
       <img src="public/shop/shop-2.jpg" alt="Dominique in Paris" class="hero__bg" loading="eager" />
       <div class="hero__text">
-        <span class="kicker">@dom.overseas</span>
-        <h1 class="hero__title">Dominique<br/><em>Overseas</em></h1>
+        <span class="kicker">Australian Social Media Content Creator</span>
+        <h1 class="hero__title"><em>@dom.overseas</em></h1>
         <p class="hero__sub">A considered approach to luxury fashion, beauty &amp; travel — since 2009</p>
-        <a class="hero__cta" href="shop.html">Get the Guides</a>
+        <a class="hero__cta" href="shop.html">Learn More</a>
       </div>
     </div>
   </div>
@@ -54,93 +54,125 @@
 <section id="journal" class="journal">
   <div class="wrap">
     <div class="journal__head">
-      <span class="eyebrow">Be Ottilie — The Journal</span>
-      <nav class="pills">
-        <a class="pill pill--on" href="#">Interviews</a>
-        <a class="pill" href="#">Style</a>
-        <a class="pill" href="#">Beauty</a>
-        <a class="pill" href="#">Lifestyle</a>
+      <span class="eyebrow">@dom.overseas — The Journal</span>
+      <nav class="pills" id="journal-tabs">
+        <a class="pill pill--on" href="#" data-filter="all">All</a>
+        <a class="pill" href="#" data-filter="style">Style</a>
+        <a class="pill" href="#" data-filter="beauty">Beauty</a>
+        <a class="pill" href="#" data-filter="travel">Travel</a>
       </nav>
       <form class="search" onsubmit="event.preventDefault()">
         <span class="search__icon" aria-hidden="true">⌕</span>
-        <input type="search" placeholder="Search for blogs…" aria-label="Search for blogs" />
+        <input type="search" placeholder="Search for blogs…" aria-label="Search for blogs" id="journal-search" />
       </form>
     </div>
 
-    <!-- Feature article (undone-style split) -->
-    <article class="feature">
-      <a href="#" class="feature__media">
-        <img src="public/posts/lv-ss26.jpg" alt="Louis Vuitton SS26" loading="lazy" />
+    <!-- Feature article -->
+    <article class="feature" data-category="style">
+      <a href="posts/louis-vuitton-ss26-bags.html" class="feature__media">
+        <img src="https://ottilie-studios.com.au/wp-content/uploads/2026/03/LV_27.3.26-140.jpg" alt="Louis Vuitton SS26" loading="lazy" />
       </a>
       <div class="feature__body">
-        <span class="kicker">Style</span>
+        <span class="kicker">Style · 30th March 2026</span>
         <h3 class="feature__title">Louis Vuitton SS26 Bags<br/><em>&amp; Favourite Pieces</em></h3>
-        <p class="feature__deck">Louis Vuitton SS26 bags and the full collection were presented on September 30th, 2025 in the north wing of Musée du Louvre in Paris — within the summer apartment of Anne of Austria.</p>
-        <a href="#" class="readmore">Read</a>
+        <p class="feature__deck">Presented at the Musée du Louvre — a closer look at the new season bags, the Whisper clutch and the pieces already on our wishlist.</p>
+        <a href="posts/louis-vuitton-ss26-bags.html" class="readmore">Read</a>
       </div>
     </article>
 
     <!-- Blog card grid -->
-    <div class="cards">
-      <article class="card">
-        <a href="#" class="card__media"><img src="public/posts/cartier-love.jpg" alt="Cartier Love Unlimited" loading="lazy" /></a>
+    <div class="cards" id="journal-cards">
+
+      <article class="card" data-category="style">
+        <a href="posts/cartier-love-unlimited.html" class="card__media"><img src="https://i0.wp.com/ottilie-studios.com.au/wp-content/uploads/2025/10/Cartier-Love-Unlimited-Bracelet-%40dom.overseas-11.jpg" alt="Cartier Love Unlimited" loading="lazy" /></a>
         <div class="card__body">
-          <span class="kicker">Jewellery</span>
-          <h4><a href="#">New In: Cartier Love Unlimited Bracelet &amp; Ring</a></h4>
+          <span class="kicker">Style · 19th Jan 2026</span>
+          <h4><a href="posts/cartier-love-unlimited.html">New In: Cartier Love Unlimited Bracelet &amp; Ring</a></h4>
           <p>One of the most-searched jewellery designs on Google, now in a surprising new version.</p>
-          <a href="#" class="readmore">Read</a>
+          <a href="posts/cartier-love-unlimited.html" class="readmore">Read</a>
         </div>
       </article>
 
-      <article class="card">
-        <a href="#" class="card__media"><img src="public/posts/cartier-polka.jpg" alt="Cartier Polka Dot Baignoire" loading="lazy" /></a>
+      <article class="card" data-category="style">
+        <a href="posts/cartier-polka-dot-baignoire-watch.html" class="card__media"><img src="https://i0.wp.com/ottilie-studios.com.au/wp-content/uploads/2025/12/Cartier-Polka-Dot-Bagnoire-Watch-shot-by-%40dom.overseas-03.jpg" alt="Cartier Polka Dot Baignoire" loading="lazy" /></a>
         <div class="card__body">
-          <span class="kicker">Watches</span>
-          <h4><a href="#">New In: Cartier Polka Dot Baignoire Watch</a></h4>
-          <p>Premiered at Watches and Wonders 2025 — stealing everyone's hearts.</p>
-          <a href="#" class="readmore">Read</a>
+          <span class="kicker">Style · 21st Dec 2025</span>
+          <h4><a href="posts/cartier-polka-dot-baignoire-watch.html">New In: Cartier Polka Dot Baignoire Watch</a></h4>
+          <p>Premiered at Watches and Wonders 2025 — the most wearable Cartier yet.</p>
+          <a href="posts/cartier-polka-dot-baignoire-watch.html" class="readmore">Read</a>
         </div>
       </article>
 
-      <article class="card">
-        <a href="#" class="card__media"><img src="public/posts/tnt-brisbane.jpg" alt="TNT The New Trend Brisbane" loading="lazy" /></a>
+      <article class="card" data-category="style">
+        <a href="posts/christopher-esber-tnt-fw25.html" class="card__media"><img src="https://ottilie-studios.com.au/wp-content/uploads/2025/10/Christopher-Esber-x-The-New-Trend-at-@dom.overseas-at-Bar-Le-Splendide-Melbourne-05.jpg" alt="Christopher Esber FW25" loading="lazy" /></a>
         <div class="card__body">
-          <span class="kicker">Retail</span>
-          <h4><a href="#">TNT The New Trend Opens on James Street</a></h4>
-          <p>Australia's favourite luxury destination arrives in Brisbane — a Queensland first.</p>
-          <a href="#" class="readmore">Read</a>
+          <span class="kicker">Style · 20th Oct 2025</span>
+          <h4><a href="posts/christopher-esber-tnt-fw25.html">TNT Launches Christopher Esber Fall/Winter 2025</a></h4>
+          <p>Celebrating 15 years of Christopher Esber at Bar Le Splendide, Melbourne.</p>
+          <a href="posts/christopher-esber-tnt-fw25.html" class="readmore">Read</a>
         </div>
       </article>
 
-      <article class="card">
-        <a href="#" class="card__media"><img src="public/posts/tnt-esber.jpg" alt="Christopher Esber FW25" loading="lazy" /></a>
+      <article class="card" data-category="beauty">
+        <a href="posts/louis-vuitton-beauty-first-look.html" class="card__media"><img src="https://ottilie-studios.com.au/wp-content/uploads/2025/08/Louis-Vuitton-Beauty-x-@dom.overseas-15.jpg" alt="Louis Vuitton Beauty" loading="lazy" /></a>
         <div class="card__body">
-          <span class="kicker">Events</span>
-          <h4><a href="#">TNT Launches Christopher Esber FW25</a></h4>
-          <p>An intimate cocktail hour at Melbourne's latest hotspot, Le Splendide.</p>
-          <a href="#" class="readmore">Read</a>
+          <span class="kicker">Beauty · 25th Aug 2025</span>
+          <h4><a href="posts/louis-vuitton-beauty-first-look.html">Louis Vuitton Beauty: A First Look</a></h4>
+          <p>La Beauté Louis Vuitton — a global launch in partnership with Dame Pat McGrath, DBE.</p>
+          <a href="posts/louis-vuitton-beauty-first-look.html" class="readmore">Read</a>
         </div>
       </article>
 
-      <article class="card">
-        <a href="#" class="card__media"><img src="public/posts/lv-beauty.jpg" alt="Louis Vuitton Beauty" loading="lazy" /></a>
+      <article class="card" data-category="style">
+        <a href="posts/louis-vuitton-odyssee-bag.html" class="card__media"><img src="https://ottilie-studios.com.au/wp-content/uploads/2025/07/Louis-Vuitton-Odyssee-bag-@dom.overseas-_-June-2025-23.jpg" alt="Louis Vuitton Odyssée Bag" loading="lazy" /></a>
         <div class="card__body">
-          <span class="kicker">Beauty</span>
-          <h4><a href="#">Louis Vuitton Beauty: A First Look</a></h4>
-          <p>A first look at La Beauté Louis Vuitton, created by Dame Pat McGrath, DBE.</p>
-          <a href="#" class="readmore">Read</a>
+          <span class="kicker">Style · 6th Jul 2025</span>
+          <h4><a href="posts/louis-vuitton-odyssee-bag.html">New In: The Louis Vuitton Odyssée Bag</a></h4>
+          <p>A nod to heritage, a daily essential — and potentially the next It-bag.</p>
+          <a href="posts/louis-vuitton-odyssee-bag.html" class="readmore">Read</a>
         </div>
       </article>
 
-      <article class="card card--ebook">
-        <a href="products/paris-travel-guide.html" class="card__media"><img src="public/images/hero-paris.png" alt="My Paris Travel Guide" loading="lazy" /></a>
+      <article class="card" data-category="travel">
+        <a href="posts/bathhouse-albion-brisbane-review.html" class="card__media"><img src="https://ottilie-studios.com.au/wp-content/uploads/2025/02/The-Bathhouse-Albion-Brisbane-01.jpg" alt="Bathhouse Albion Brisbane" loading="lazy" /></a>
         <div class="card__body">
-          <span class="kicker">E-Book</span>
-          <h4><a href="products/paris-travel-guide.html">My Paris Travel Guide</a></h4>
-          <p>An edited guide to the city — hotels, tables, boutiques and the quiet corners.</p>
-          <a href="products/paris-travel-guide.html" class="readmore">Shop the guide</a>
+          <span class="kicker">Travel · 28th Feb 2025</span>
+          <h4><a href="posts/bathhouse-albion-brisbane-review.html">The Bathhouse Albion: Brisbane Sauna Review</a></h4>
+          <p>Sauna, cold plunge and one of Brisbane's best wellness experiences.</p>
+          <a href="posts/bathhouse-albion-brisbane-review.html" class="readmore">Read</a>
         </div>
       </article>
+
+      <article class="card" data-category="style">
+        <a href="posts/cartier-tank-mini-watch.html" class="card__media"><img src="https://ottilie-studios.com.au/wp-content/uploads/2025/02/TANK-MINI-MODEL-LOUIS-CARTIER-WATCH-x-@dom.overseas-01.jpg" alt="Cartier Tank Mini" loading="lazy" /></a>
+        <div class="card__body">
+          <span class="kicker">Style · 10th Feb 2025</span>
+          <h4><a href="posts/cartier-tank-mini-watch.html">New In: Tank Mini Model Louis Cartier Watch</a></h4>
+          <p>The micro-watch trend meets Cartier's most iconic silhouette.</p>
+          <a href="posts/cartier-tank-mini-watch.html" class="readmore">Read</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="style">
+        <a href="posts/inside-out-hermes-birkin-bag.html" class="card__media"><img src="https://i0.wp.com/ottilie-studios.com.au/wp-content/uploads/2024/10/Hermes-Re-See-SS25-by-%40dom.overseas-01.jpg" alt="Inside-Out Hermès Birkin" loading="lazy" /></a>
+        <div class="card__body">
+          <span class="kicker">Style · 15th Oct 2024</span>
+          <h4><a href="posts/inside-out-hermes-birkin-bag.html">First Look: The Inside-Out Hermès Birkin Bag</a></h4>
+          <p>Hermès turned its most iconic silhouette inside out for SS25 — and it works.</p>
+          <a href="posts/inside-out-hermes-birkin-bag.html" class="readmore">Read</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="travel">
+        <a href="posts/elements-of-byron-hotel-review.html" class="card__media"><img src="https://ottilie-studios.com.au/wp-content/uploads/2024/08/Elements-of-Byron-Review-01.jpg" alt="Elements of Byron" loading="lazy" /></a>
+        <div class="card__body">
+          <span class="kicker">Travel · 15th Aug 2024</span>
+          <h4><a href="posts/elements-of-byron-hotel-review.html">Byron Bay Hotel Review – Elements of Byron</a></h4>
+          <p>Barefoot luxury, rainforest villas and the best Greek salad of the year.</p>
+          <a href="posts/elements-of-byron-hotel-review.html" class="readmore">Read</a>
+        </div>
+      </article>
+
     </div>
 
     <div class="more"><a href="journal.html" class="btn btn--ghost">View all stories</a></div>

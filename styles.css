@@ -213,6 +213,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   color: var(--ink);
   white-space: nowrap;
+  border: 1px solid var(--ink);
 }
 
 .hero__center { position: relative; overflow: hidden; background: var(--bg-cream); aspect-ratio: 3 / 4; }
@@ -233,7 +234,7 @@ a { color: inherit; text-decoration: none; }
 .hero__title {
   font-family: var(--font-serif);
   font-weight: 300;
-  font-size: clamp(48px, 7vw, 120px);
+  font-size: clamp(38px, 5.5vw, 90px);
   line-height: 0.95;
   letter-spacing: 0.02em;
   margin: 0 0 22px;

@@ -500,6 +500,25 @@ a { color: inherit; text-decoration: none; }
 }
 .brands__row span { white-space: nowrap; font-style: italic; }
 
+/* Logo grid */
+.brands__logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px 56px;
+  padding: 8px 0 16px;
+}
+.brands__logos img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0);
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.brands__logos img:hover { opacity: 1; }
+
 /* ---------- Newsletter section ---------- */
 .signup-section {
   padding: 120px 0;

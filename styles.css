@@ -500,24 +500,34 @@ a { color: inherit; text-decoration: none; }
 }
 .brands__row span { white-space: nowrap; font-style: italic; }
 
-/* Logo grid */
-.brands__logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 32px 56px;
-  padding: 8px 0 16px;
+/* Logo ticker */
+@keyframes brands-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
-.brands__logos img {
-  height: 32px;
+.brands__ticker {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.brands__track {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  width: max-content;
+  animation: brands-scroll 28s linear infinite;
+}
+.brands__track:hover { animation-play-state: paused; }
+.brands__track img {
+  height: 28px;
   width: auto;
   object-fit: contain;
   filter: brightness(0);
-  opacity: 0.85;
+  opacity: 0.7;
+  flex-shrink: 0;
   transition: opacity 0.2s;
 }
-.brands__logos img:hover { opacity: 1; }
+.brands__track img:hover { opacity: 1; }
 
 /* ---------- Newsletter section ---------- */
 .signup-section {

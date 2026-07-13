@@ -529,6 +529,28 @@ a { color: inherit; text-decoration: none; }
 }
 .brands__track img:hover { opacity: 1; }
 
+/* Logo grid (work-with-me) */
+.brands__logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 56px;
+  max-width: 560px;
+  margin: 0 auto;
+  align-items: center;
+  justify-items: center;
+}
+.brands__logos img {
+  max-height: 36px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.brands__logos img:hover { opacity: 1; }
+
 /* ---------- Newsletter section ---------- */
 .signup-section {
   padding: 120px 0;

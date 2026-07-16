@@ -194,10 +194,10 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: 1fr 1.35fr 1fr;
   gap: 2px;
   background: var(--bg);
+  align-items: stretch;
 }
 .hero__panel {
   position: relative;
-  aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--bg-soft);
 }

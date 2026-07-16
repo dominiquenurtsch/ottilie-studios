@@ -585,7 +585,11 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--line);
 }
 .shop-board__name { font-family: var(--font-sans); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 4px; }
-.shop-board__desc { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--ink-soft); }
+.shop-board__desc { font-family: var(--font-serif); font-style: italic; font-size: 15px; color: var(--ink-soft); display: block; }
+/* Board logos sit where the text name was — sized so both read at the same weight */
+.shop-board__logo { width: auto; display: block; margin-bottom: 8px; filter: brightness(0); opacity: 0.88; }
+.shop-board__logo--shopmy { height: 26px; }
+.shop-board__logo--ltk { height: 15px; }
 .shop-board__arrow { font-size: 18px; color: var(--ink-soft); transition: transform 0.2s; }
 .shop-board:hover .shop-board__arrow { transform: translateX(4px); }
 

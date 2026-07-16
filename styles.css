@@ -694,7 +694,8 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg-cream);
   text-align: center;
 }
-.signup-section__inner { max-width: 640px; margin: 0 auto; }
+.signup-section__inner { max-width: 900px; margin: 0 auto; }
+@media (min-width: 700px) { .signup-section .split__title { white-space: nowrap; } }
 .signup-section p {
   font-family: var(--font-serif);
   font-size: 17px;

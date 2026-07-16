@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=8" />
+<link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body data-page="home">
 
@@ -259,11 +259,9 @@
     <span class="kicker">Newsletter</span>
     <h2 class="split__title">Receive a <em>free photo editing guide.</em></h2>
     <p>Be the first in the know on new articles, partnerships and special giveaways.</p>
-    <form class="signup" onsubmit="event.preventDefault(); this.querySelector('.signup__msg').textContent='Thank you — please check your inbox.'; this.reset();">
-      <input type="email" required placeholder="Email address" aria-label="Email address" />
-      <button class="btn" type="submit">Subscribe</button>
-      <span class="signup__msg" aria-live="polite"></span>
-    </form>
+    <div class="signup-embed">
+      <iframe src="https://domoverseas.substack.com/embed" title="Subscribe to Dominique on Substack" loading="lazy" scrolling="no"></iframe>
+    </div>
   </div>
 </section>
 

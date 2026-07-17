@@ -1163,8 +1163,9 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: repeat(6, 1fr);
   gap: 8px;
 }
-/* Products with fewer thumbs: fill the row instead of leaving empty slots */
-.gallery__thumbs--5 { grid-template-columns: repeat(5, 1fr); }
+/* Products with fewer thumbs: fill the row instead of leaving empty slots.
+   Double class keeps it winning over the responsive column overrides below. */
+.gallery__thumbs.gallery__thumbs--5 { grid-template-columns: repeat(5, 1fr); }
 .gallery__thumb {
   aspect-ratio: 3 / 4;
   background: var(--bg-cream);

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../styles.css?v=20" />
+<link rel="stylesheet" href="../styles.css?v=21" />
 </head>
 <body data-page="shop">
 <div data-include="../partials/header.html"></div>
@@ -32,6 +32,13 @@
       <div class="gallery">
         <div class="gallery__main">
           <img id="galleryMain" src="../public/products/ebook/1.jpg" alt="How I Made It Overseas — E-Book by @dom.overseas" />
+        </div>
+        <div class="gallery__thumbs gallery__thumbs--5" id="galleryThumbs">
+          <button class="gallery__thumb is-on" data-src="../public/products/ebook/1.jpg"><img src="../public/products/ebook/1.jpg" alt="Cover" /></button>
+          <button class="gallery__thumb" data-src="../public/products/ebook/2.jpg"><img src="../public/products/ebook/2.jpg" alt="Table of contents" /></button>
+          <button class="gallery__thumb" data-src="../public/products/ebook/3.jpg"><img src="../public/products/ebook/3.jpg" alt="Meet Dominique" /></button>
+          <button class="gallery__thumb" data-src="../public/products/ebook/4.jpg"><img src="../public/products/ebook/4.jpg" alt="Inside pages" /></button>
+          <button class="gallery__thumb" data-src="../public/products/ebook/5.jpg"><img src="../public/products/ebook/5.jpg" alt="Closing page" /></button>
         </div>
       </div>
 
@@ -96,7 +103,7 @@
           <!-- What's inside -->
           <section>
             <h3 class="pdesc__h">What's <em>inside</em></h3>
-            <p class="pdesc__lead">This @dom.overseas e-book is for you if…</p>
+            <p class="pdesc__lead">This @dom.overseas e-book is for you if… — and you can discover the full table of contents in the photos above.</p>
             <div class="inside__list">
               <div class="inside__item">
                 <div class="inside__sum"><span class="num">01</span><span class="name">Content creation tips <em>— what cameras to use and how to edit</em></span></div>
@@ -313,6 +320,20 @@ function closeCheckoutDrawer() {
 document.getElementById('checkoutClose').addEventListener('click', closeCheckoutDrawer);
 document.getElementById('checkoutOverlay').addEventListener('click', closeCheckoutDrawer);
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeCheckoutDrawer(); });
+
+// Gallery swap
+(function(){
+  const main = document.getElementById('galleryMain');
+  const thumbs = document.getElementById('galleryThumbs');
+  if (!main || !thumbs) return;
+  thumbs.addEventListener('click', (e) => {
+    const btn = e.target.closest('.gallery__thumb');
+    if (!btn) return;
+    main.src = btn.dataset.src;
+    thumbs.querySelectorAll('.gallery__thumb').forEach(t => t.classList.remove('is-on'));
+    btn.classList.add('is-on');
+  });
+})();
 
 // Tabs
 (function(){

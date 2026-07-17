@@ -94,6 +94,15 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   color: var(--ink-soft);
 }
+/* Clickable announcement — hover the marquee to pause, then click */
+.marquee__item--link {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 2px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.marquee__item--link:hover { color: var(--accent); border-color: var(--accent); }
 .marquee__dot {
   font-size: 8px;
   color: var(--ink-mute);

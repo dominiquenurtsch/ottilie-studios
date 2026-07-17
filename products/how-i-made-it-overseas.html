@@ -56,11 +56,9 @@
 
         <p class="pinfo__lead">An e-book about entrepreneurship, content creation and personal life stories by @dom.overseas — from the lessons she learned studying in Germany to the pivotal moments that led to founding her own companies in Australia. Plus how she creates her content, and how she invests her money.</p>
 
-        <form class="buy" onsubmit="event.preventDefault(); const m=document.getElementById('buyMsg'); m.textContent='Added to basket ✦'; setTimeout(()=>m.textContent='',2500);">
-          <button type="submit" class="btn btn--ghost">Add to basket</button>
+        <div class="buy">
           <button type="button" class="btn" onclick="openCheckoutDrawer()">Buy Now</button>
-        </form>
-        <div id="buyMsg" class="mono" style="min-height:18px; color:var(--accent); font-family:var(--font-sans); font-size:11px; letter-spacing:0.22em; text-transform:uppercase;"></div>
+        </div>
 
         <div class="pinfo__notice">
           <span>Instant digital download</span>

@@ -423,15 +423,29 @@ a { color: inherit; text-decoration: none; }
   padding: 14px 30px;
   background: var(--ink);
   border: 1px solid var(--ink);
-  /* flex-centred so the label sits dead centre regardless of inherited
-     line-height; text-indent offsets the trailing letter-spacing */
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+/* Every button: flex-centred label with a trailing arrow.
+   Driven from CSS so no button can be missed or double-arrowed. */
+.btn,
+.product__btn,
+.hero__cta,
+.readmore {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.7em;
   line-height: 1;
-  text-indent: 0.28em;
-  cursor: pointer;
-  transition: background .2s ease, color .2s ease;
+}
+.btn::after,
+.product__btn::after,
+.hero__cta::after,
+.readmore::after {
+  content: "→";
+  /* cancels the trailing letter-spacing so the pair sits optically centred */
+  margin-right: -0.28em;
 }
 .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 .btn--ghost { background: transparent; color: var(--ink); }
@@ -994,7 +1008,6 @@ a { color: inherit; text-decoration: none; }
 .product__title { font-family: var(--font-serif); font-weight: 400; font-size: 22px; line-height: 1.2; margin: 0 0 8px; }
 .product__price { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.12em; color: var(--ink); margin: 0 0 14px; }
 .product__btn {
-  display: inline-block;
   font-family: var(--font-sans);
   font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase;
   padding: 10px 22px;
@@ -1852,7 +1865,9 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
 }
 .checkout-drawer__cta {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   text-align: center;
   margin-bottom: 16px;

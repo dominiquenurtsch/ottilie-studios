@@ -1,9 +1,9 @@
 // Partial loader + site scripts
 (async () => {
-  // Compute base prefix (sub-pages sit in /posts/, so need "../")
-  const depth = location.pathname.replace(/\/$/, '').split('/').filter(Boolean).length;
-  const isPostPage = location.pathname.includes('/posts/');
-  const base = isPostPage ? '../' : './';
+  // Compute base prefix. Sub-pages live in /posts/ and /products/, so they
+  // need "../" to reach the site root. Add any new subfolder here.
+  const isNested = /\/(posts|products)\//.test(location.pathname);
+  const base = isNested ? '../' : './';
 
   const hosts = document.querySelectorAll('[data-include]');
   await Promise.all([...hosts].map(async (el) => {

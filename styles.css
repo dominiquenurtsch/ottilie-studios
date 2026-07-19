@@ -1314,12 +1314,16 @@ a { color: inherit; text-decoration: none; }
   background: var(--bg-cream);
   padding: 0;
 }
-/* Full-bleed ribbon — break out of the centred column to viewport width.
-   Higher specificity than `.pdesc > section` so max-width is overridden. */
+/* Full-bleed ribbon — break out of the centred grid column to viewport width.
+   It's a grid item, so it needs an explicit width (negative margins alone
+   can't expand it past its track). justify-self:start stops the grid
+   re-centring it. */
 .pdesc > section.pdesc__stats {
   max-width: none;
+  width: 100vw;
+  justify-self: start;
   margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  margin-right: 0;
 }
 .pdesc__stats > div {
   text-align: center;

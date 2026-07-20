@@ -970,6 +970,10 @@ a { color: inherit; text-decoration: none; }
 ----------------------------------------------------------- */
 .contact { padding: 120px 0; background: var(--bg); }
 .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; max-width: 1040px; margin: 0 auto; }
+/* Form removed — single centred info column */
+.contact__grid--single { grid-template-columns: 1fr; max-width: 620px; text-align: center; }
+.contact__grid--single .contact__info a.email { display: inline-block; }
+.contact__grid--single .contact__info ul { display: inline-block; text-align: left; }
 .contact__info h3 {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -2163,7 +2167,7 @@ a { color: inherit; text-decoration: none; }
 }
 .trip-card__gallery img {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/4;
   object-fit: cover;
   display: block;
 }

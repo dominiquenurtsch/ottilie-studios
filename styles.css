@@ -243,7 +243,6 @@ a { color: inherit; text-decoration: none; }
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   text-align: center;
   padding: 40px 28px;
-  background: radial-gradient(ellipse 85% 62% at center, rgba(239,231,219,0.78) 0%, rgba(239,231,219,0.45) 55%, rgba(239,231,219,0.12) 100%);
 }
 .hero__text .kicker { margin-bottom: 22px; }
 .hero__title {

@@ -1795,6 +1795,8 @@ a { color: inherit; text-decoration: none; }
   .article__hero { aspect-ratio: 4 / 3; }
   .article__gallery { grid-template-columns: 1fr; gap: 6px; padding: 0 16px; }
   .stat__num { font-size: 48px; }
+  /* Long CTA label — tighten so it fits one line instead of wrapping */
+  .work__ctas .btn { font-size: 9.5px; letter-spacing: 0.12em; padding: 14px 18px; }
 }
 
 /* ---- Checkout Drawer ---- */

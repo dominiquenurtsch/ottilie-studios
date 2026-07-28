@@ -18,9 +18,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=31" />
+<link rel="stylesheet" href="styles.css?v=32" />
 </head>
-<body data-page="rate-card">
+<!--
+  Password gate: client-side only. GitHub Pages is static hosting with no
+  server-side auth, so this hides content from casual visitors and search
+  engines but is not real security — anyone viewing page source can read
+  the content underneath. Combined with noindex + no nav link as the main
+  privacy measures; this password is an extra soft gate for link-sharing.
+-->
+<body data-page="rate-card" class="rc-locked">
+<div class="rc-gate" id="rcGate">
+  <div class="rc-gate__box">
+    <span class="kicker">Private &amp; Confidential</span>
+    <h1>2026 Rate Card</h1>
+    <p>Enter the password to view.</p>
+    <form class="rc-gate__form" id="rcGateForm" autocomplete="off">
+      <input type="password" id="rcGateInput" placeholder="Password" aria-label="Password" autofocus />
+      <button type="submit" class="btn">Enter →</button>
+    </form>
+    <span class="rc-gate__error" id="rcGateError"></span>
+  </div>
+</div>
+
 <div data-include="partials/header.html"></div>
 
 <main>
@@ -371,5 +391,38 @@
 
 <div data-include="partials/footer.html"></div>
 <script src="script.js" defer></script>
+<script>
+(function () {
+  var CORRECT = 'PARTNERSHIPS';
+  var SESSION_KEY = 'rc-unlocked';
+
+  function unlock() {
+    document.body.classList.remove('rc-locked');
+    document.getElementById('rcGate').remove();
+  }
+
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    unlock();
+    return;
+  }
+
+  var form = document.getElementById('rcGateForm');
+  var input = document.getElementById('rcGateInput');
+  var error = document.getElementById('rcGateError');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var entered = input.value.trim().toUpperCase();
+    if (entered === CORRECT) {
+      sessionStorage.setItem(SESSION_KEY, '1');
+      unlock();
+    } else {
+      error.textContent = 'Incorrect password — please try again.';
+      input.value = '';
+      input.focus();
+    }
+  });
+})();
+</script>
 </body>
 </html>

@@ -2488,12 +2488,25 @@ a { color: inherit; text-decoration: none; }
 .rc-table { margin-top: 8px; border-top: 1px solid var(--line-strong); font-family: var(--font-serif); }
 .rc-row {
   display: grid;
-  grid-template-columns: 1fr 1.8fr 0.7fr;
+  grid-template-columns: 1fr 1.8fr 0.7fr auto;
   gap: 24px;
   padding: 24px 4px;
   border-bottom: 1px solid var(--line);
-  align-items: baseline;
+  align-items: center;
 }
+.rc-row__book {
+  justify-self: end;
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 11px 18px;
+  border: 1px solid var(--ink);
+  white-space: nowrap;
+  transition: background .2s ease, color .2s ease;
+}
+.rc-row__book:hover { background: var(--ink); color: var(--bg); }
 .rc-row__name { font-family: var(--font-sans); font-weight: 600; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
 .rc-row__scope { display: block; margin-top: 4px; font-family: var(--font-sans); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); font-weight: 400; }
 .rc-row__deliv { color: var(--ink); font-size: 16px; line-height: 1.55; }
@@ -2527,8 +2540,9 @@ a { color: inherit; text-decoration: none; }
   .rc-logo-wall { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; }
   .rc-brand-grid { grid-template-columns: repeat(2, 1fr); }
   .rc-trip-grid { grid-template-columns: repeat(2, 1fr); }
-  .rc-row { grid-template-columns: 1fr; gap: 6px; }
+  .rc-row { grid-template-columns: 1fr; gap: 10px; }
   .rc-row__price { text-align: left; }
+  .rc-row__book { justify-self: start; margin-top: 4px; }
   .rc-stat-row { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
   .rc-proof-grid { grid-template-columns: 1fr; }
   .rc-section__head { flex-direction: column; }

@@ -33,7 +33,7 @@ pintrk('page');
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../styles.css?v=34" />
+<link rel="stylesheet" href="../styles.css?v=35" />
 </head>
 <body data-page="journal">
 <div data-include="../partials/header.html"></div>
@@ -93,6 +93,24 @@ pintrk('page');
   </section>
 </main>
 <div data-include="../partials/footer.html"></div>
+<!-- Email sign-up popup -->
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<div class="email-popup" id="emailPopup">
+  <div class="email-popup__box">
+    <button class="email-popup__close" id="emailPopupClose" type="button" aria-label="Close">&times;</button>
+    <span class="email-popup__kicker">Join the list</span>
+    <h3>Stay in the loop</h3>
+    <p>New content trips, travel guides and behind-the-scenes updates from Ottilie Studios &mdash; straight to your inbox.</p>
+    <form action="https://app.kit.com/forms/9755970/subscriptions" class="email-popup__form seva-form formkit-form" method="post" data-sv-form="9755970" data-uid="5639fdc613" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false}}}">
+      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+      <div data-element="fields" class="seva-fields formkit-fields">
+        <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Your email address" required type="email" />
+        <button data-element="submit" class="btn formkit-submit"><span>Sign up</span></button>
+      </div>
+    </form>
+    <p class="email-popup__fine">No spam, unsubscribe anytime.</p>
+  </div>
+</div>
 <script src="../script.js" defer></script>
 </body>
 </html>

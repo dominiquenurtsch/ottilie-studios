@@ -55,4 +55,31 @@
       });
     });
   }
+
+  // Email sign-up popup
+  const popup = document.getElementById('emailPopup');
+  if (popup) {
+    const DISMISS_KEY = 'ottilie-email-popup-dismissed';
+    const close = () => popup.classList.remove('is-open');
+    const dismiss = () => {
+      close();
+      sessionStorage.setItem(DISMISS_KEY, '1');
+    };
+
+    if (!sessionStorage.getItem(DISMISS_KEY)) {
+      setTimeout(() => popup.classList.add('is-open'), 8000);
+    }
+
+    document.getElementById('emailPopupClose')?.addEventListener('click', dismiss);
+    popup.addEventListener('click', (e) => { if (e.target === popup) dismiss(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && popup.classList.contains('is-open')) dismiss();
+    });
+
+    const form = popup.querySelector('.email-popup__form');
+    form?.addEventListener('submit', () => {
+      sessionStorage.setItem(DISMISS_KEY, '1');
+      setTimeout(() => popup.classList.add('is-success'), 400);
+    });
+  }
 })();

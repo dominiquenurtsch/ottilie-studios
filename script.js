@@ -77,9 +77,15 @@
     });
 
     const form = popup.querySelector('.email-popup__form');
+    const errors = popup.querySelector('[data-element="errors"]');
     form?.addEventListener('submit', () => {
-      sessionStorage.setItem(DISMISS_KEY, '1');
-      setTimeout(() => popup.classList.add('is-success'), 400);
+      setTimeout(() => {
+        const hasError = errors && errors.textContent.trim().length > 0;
+        if (!hasError) {
+          sessionStorage.setItem(DISMISS_KEY, '1');
+          popup.classList.add('is-success');
+        }
+      }, 1500);
     });
   }
 })();

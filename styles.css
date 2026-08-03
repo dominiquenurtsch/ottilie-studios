@@ -2656,14 +2656,16 @@ body.rc-locked .rc-final { display: none; }
   margin: 18px 0 0;
 }
 .email-popup__status {
-  font-family: var(--font-sans);
-  font-size: 11.5px;
-  letter-spacing: 0.08em;
+  font-family: var(--font-serif);
+  font-size: 17px;
   color: var(--ink);
-  margin: 0;
+  margin: 0 0 20px;
+}
+.email-popup__download {
   display: none;
 }
+.email-popup__download .btn { width: 100%; }
 .email-popup.is-success .email-popup__form,
 .email-popup.is-success .email-popup__kicker,
 .email-popup.is-success h3 + p { display: none; }
-.email-popup.is-success .email-popup__status { display: block; }
+.email-popup.is-success .email-popup__download { display: block; }

@@ -89,3 +89,15 @@
     });
   }
 })();
+
+// Lead tracking: a click on any email link counts as a brand enquiry.
+// Skipped on thank-you pages, where email links are customer support, not leads.
+(() => {
+  if (location.pathname.includes('thank-you')) return;
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="mailto:"]');
+    if (!a) return;
+    if (typeof gtag === 'function') gtag('event', 'generate_lead', { link_url: a.getAttribute('href').split('?')[0] });
+    if (typeof pintrk === 'function') pintrk('track', 'lead');
+  });
+})();

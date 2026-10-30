@@ -2722,13 +2722,25 @@ body.rc-locked .rc-final { display: none; }
   .home-press .press__card:nth-child(n+3) { display: none; }
 }
 
-/* Homepage "Trusted by": static wrapped logo row (replaces the scrolling ticker,
-   which rendered with hard cut-offs in Safari once the track got very wide) */
-.proof + .brands--static { padding: 40px 0 72px; }
-.brands__wall { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px 48px; max-width: 1240px; margin: 0 auto; }
-.brands__wall img { height: 26px; width: auto; object-fit: contain; opacity: 0.85; flex-shrink: 0; }
-@media (max-width: 640px) {
-  .proof + .brands--static { padding: 28px 0 56px; }
-  .brands__wall { gap: 22px 34px; }
-  .brands__wall img { height: 20px; }
+/* Homepage "Trusted by" marquee. Kept deliberately light for Safari: track stays
+   ~3.6k px wide, no mix-blend-mode, no mask-image (edge fades are overlays). */
+@keyframes brands-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
+.proof + .brands--marquee { padding: 40px 0 64px; }
+.brands__marquee { position: relative; overflow: hidden; margin-top: 8px; }
+.brands__marquee::before,
+.brands__marquee::after { content: ""; position: absolute; top: 0; bottom: 0; width: 96px; z-index: 1; pointer-events: none; }
+.brands__marquee::before { left: 0; background: linear-gradient(to right, var(--bg), rgba(255, 255, 255, 0)); }
+.brands__marquee::after { right: 0; background: linear-gradient(to left, var(--bg), rgba(255, 255, 255, 0)); }
+.brands__marquee-track { display: flex; align-items: center; gap: 48px; padding-right: 48px; width: max-content; animation: brands-marquee 50s linear infinite; }
+.brands__marquee-track:hover { animation-play-state: paused; }
+.brands__marquee-track img { height: 24px; width: auto; flex-shrink: 0; opacity: 0.85; }
+@media (max-width: 640px) {
+  .proof + .brands--marquee { padding: 28px 0 48px; }
+  .brands__marquee::before, .brands__marquee::after { width: 40px; }
+  .brands__marquee-track { gap: 36px; padding-right: 36px; }
+  .brands__marquee-track img { height: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { .brands__marquee-track { animation: none; } }

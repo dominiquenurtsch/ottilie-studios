@@ -66,7 +66,9 @@
       sessionStorage.setItem(DISMISS_KEY, '1');
     };
 
-    if (!sessionStorage.getItem(DISMISS_KEY)) {
+    // Brand-facing pages (homepage, Work With Dom) stay uninterrupted
+    const NO_POPUP_PAGES = ['home', 'work'];
+    if (!sessionStorage.getItem(DISMISS_KEY) && !NO_POPUP_PAGES.includes(document.body.dataset.page)) {
       setTimeout(() => popup.classList.add('is-open'), 8000);
     }
 

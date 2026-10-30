@@ -2692,7 +2692,7 @@ body.rc-locked .rc-final { display: none; }
 .email-popup.is-success .email-popup__download { display: block; }
 
 /* ---------- Homepage: proof strip + closing CTA ---------- */
-.proof { padding: 56px 0 8px; background: var(--bg); text-align: center; }
+.proof { padding: 52px 0 48px; background: var(--bg-soft); text-align: center; }
 .proof__stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; max-width: 980px; margin: 0 auto; }
 .proof__stats strong { display: block; font-family: var(--font-serif); font-weight: 300; font-size: clamp(30px, 3.6vw, 48px); color: var(--ink); }
 .proof__stats span { display: block; margin-top: 6px; font-family: var(--font-sans); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
@@ -2710,7 +2710,7 @@ body.rc-locked .rc-final { display: none; }
 .home-cta .btn--ghost:hover { background: var(--bg); color: var(--ink); border-color: var(--bg); }
 
 @media (max-width: 640px) {
-  .proof { padding-top: 40px; }
+  .proof { padding: 36px 0 32px; }
   .proof__stats { grid-template-columns: repeat(2, 1fr); gap: 24px 12px; }
   .proof__stats span { font-size: 9.5px; letter-spacing: 0.12em; }
   .home-cta { padding: 80px 0; }
@@ -2720,4 +2720,15 @@ body.rc-locked .rc-final { display: none; }
 @media (max-width: 720px) {
   .hero__panel { display: none; }
   .home-press .press__card:nth-child(n+3) { display: none; }
+}
+
+/* Homepage "Trusted by": static wrapped logo row (replaces the scrolling ticker,
+   which rendered with hard cut-offs in Safari once the track got very wide) */
+.proof + .brands--static { padding: 40px 0 72px; }
+.brands__wall { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px 48px; max-width: 1240px; margin: 0 auto; }
+.brands__wall img { height: 26px; width: auto; object-fit: contain; opacity: 0.85; flex-shrink: 0; }
+@media (max-width: 640px) {
+  .proof + .brands--static { padding: 28px 0 56px; }
+  .brands__wall { gap: 22px 34px; }
+  .brands__wall img { height: 20px; }
 }
